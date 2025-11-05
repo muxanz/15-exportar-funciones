@@ -28,3 +28,11 @@ export const aplicarImpuestos = function (total) {
 export const aplicarDescuento = function (total) {
     return total - (total * DESCUENTO);
 }
+
+export const aplicarDescuentoPorRol = function (total, usuario) {
+    if (usuario === 'admin') {
+        return total - (total * 0.2);
+    } else {
+        return aplicarDescuento(total);
+    }
+}
